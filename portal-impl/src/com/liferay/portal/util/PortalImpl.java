@@ -8506,6 +8506,15 @@ public class PortalImpl implements Portal {
 				Http.HTTPS, PropsValues.WEB_SERVER_PROTOCOL)) {
 
 			https = true;
+		} else {
+			String[] SSL_DOMAINS = PropsValues.WEB_SERVER_SSL_DOMAINS;
+			if (SSL_DOMAINS!= null && SSL_DOMAINS.length>0) {
+				for (String sslDomain : SSL_DOMAINS) {
+					if (serverName.equals(sslDomain)) {
+						https = true;
+					}
+				}
+			}
 		}
 
 		if (https) {

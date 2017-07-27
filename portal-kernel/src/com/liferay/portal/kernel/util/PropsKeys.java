@@ -2398,6 +2398,8 @@ public interface PropsKeys {
 
 	public static final String WEB_SERVER_SERVLET_VERSION_VERBOSITY = "web.server.servlet.version.verbosity";
 
+	public static final String WEB_SERVER_SSL_DOMAINS = "web.server.ssl.domains";
+
 	public static final String WEBDAV_IGNORE = "webdav.ignore";
 
 	public static final String WEBDAV_NONCE_EXPIRATION = "webdav.nonce.expiration";
