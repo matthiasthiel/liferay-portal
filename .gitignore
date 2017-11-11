@@ -206,3 +206,5 @@ cobertura.ser
 !/.gradle/caches/modules-2/files-2.1
 /.gradle/caches/modules-2/files-2.1/**/*-sources.jar
 /.gradle/caches/modules-2/files-2.1/com.liferay.portal/*/*-SNAPSHOT
+portal-impl/.idea/
+.gradle/
