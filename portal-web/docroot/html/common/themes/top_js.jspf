@@ -475,7 +475,16 @@ for (String analyticsType : analyticsTypes) {
 		<c:when test='<%= StringUtil.equalsIgnoreCase(analyticsType, "google") %>'>
 
 			<%
-			String googleAnalyticsId = groupTypeSettings.getProperty("googleAnalyticsId");
+			String googleAnalyticsIdProp = groupTypeSettings.getProperty("googleAnalyticsId");
+			String googleAnalyticsId = null;
+			String googleAdwordsId = null;
+			if (googleAnalyticsIdProp!=null) {
+				String[] ids = googleAnalyticsIdProp.split(",");
+				googleAnalyticsId = ids[0];
+				if (ids.length>=2) {
+					googleAdwordsId = ids[1];
+				}
+			}
 			%>
 
 			<c:if test="<%= Validator.isNotNull(googleAnalyticsId) %>">
@@ -526,6 +535,9 @@ for (String analyticsType : analyticsTypes) {
 								ga('send', 'pageview');
 							}
 						);
+					</c:if>
+					<c:if test="<%= Validator.isNotNull(googleAdwordsId) %>">
+						ga('config', 'AW-957073959');
 					</c:if>
 				</script>
 			</c:if>
